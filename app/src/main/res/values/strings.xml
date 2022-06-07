@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">primer_parcial</string>
+    <string name="buscar_persona">Buscar Personas</string>
 </resources>
