@@ -27,10 +27,7 @@ class PersonalViewModel @Inject constructor(
                                 Personal(0,"Luis", "Rosario","849-353-6691", "luisramonros123@gamil.com","Ingeniero")
                                 personalDao.getAll()
                         }
-                        for(personal in personalList.value !!){
-                                Log.d("mensaje","id ${personal.personaId}, nombre ${personal.Nombre }")
 
-                        }
                 }
         }
 }

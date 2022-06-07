@@ -21,12 +21,17 @@
         android:id="@+id/miRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9"/>
+        android:layout_weight="9">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_add"/>
+        android:src="@drawable/ic_add">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </LinearLayout>
