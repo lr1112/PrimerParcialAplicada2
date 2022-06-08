@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">primer_parcial</string>
-    <string name="buscar_persona">Buscar Personas</string>
+    <string name="buscar_persona">Buscar Persona</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="telefono">Telefono</string>
+    <string name="correo">Correo</string>
+    <string name="ocupacion">Ocupacion</string>
+    <string name="guardar">Guardar</string>
 </resources>

@@ -1,26 +1,31 @@
 package edu.ucne.primer_parcial
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
-import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.ucne.primer_parcial.adaptador.AdaptadorPersonas
+import edu.ucne.primer_parcial.data.Constantes
 import edu.ucne.primer_parcial.databinding.ActivityMainBinding
+import edu.ucne.primer_parcial.ui.FormularioActivity
 import edu.ucne.primer_parcial.viewModels.PersonalViewModel
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding:ActivityMainBinding
-    private val personalViewModel: PersonalViewModel by viewModels()
+    lateinit var personalViewModel: PersonalViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+       personalViewModel =  ViewModelProvider(this).get()
        personalViewModel.iniciar()
 
         binding.miRecyclerView.apply {
@@ -30,5 +35,12 @@ class MainActivity : AppCompatActivity() {
         personalViewModel.personalList.observe(this, Observer {
             binding.miRecyclerView.adapter = AdaptadorPersonas(it)
         })
+
+        binding.btnAbrirFormulario.setOnClickListener {
+            val intent = Intent(this, FormularioActivity::class.java)
+            intent.putExtra(Constantes.OPERANCION_KEY, Constantes.OPERACION_INSERTAR)
+            startActivity(intent)
+        }
     }
+
 }
