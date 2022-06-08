@@ -15,7 +15,7 @@ class PrestamosApp: Application() {
         db = Room.databaseBuilder(
             this,
             PrestamosDb::class.java,
-            "personal"
+            "prestamos"
         ).build()
 
     }
