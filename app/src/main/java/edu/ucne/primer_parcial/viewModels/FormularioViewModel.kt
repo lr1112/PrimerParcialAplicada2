@@ -3,7 +3,13 @@ package edu.ucne.primer_parcial.viewModels
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import edu.ucne.primer_parcial.PrestamosApp.Companion.db
 import edu.ucne.primer_parcial.data.Constantes
+import edu.ucne.primer_parcial.models.Prestamo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class FormularioViewModel: ViewModel() {
     var id = MutableLiveData<Int>()
@@ -20,11 +26,21 @@ class FormularioViewModel: ViewModel() {
     }
 
     fun guardarUsuario(){
+        var mPrestamo = Prestamo(0,nombre.value!!,apellido.value!!,telefono.value!!,
+        correo.value!!,prestado.value!!)
         when(operacion){
             Constantes.OPERACION_INSERTAR->{
-                //todo logica para insertar en la db
-                Log.d("mensaje", "nombre ${nombre.value}")
-                Log.d("mensaje", "correo ${correo.value}")
+                viewModelScope.launch {
+                    val result = withContext(Dispatchers.IO){
+                        db.personalDao().insert(
+                            arrayListOf<Prestamo>(
+                                mPrestamo
+                            )
+                        )
+                    }
+                    operacionExitosa.value = result.equals(true)
+                }
+
 
             }
             Constantes.OPERACION_EDITAR->{
