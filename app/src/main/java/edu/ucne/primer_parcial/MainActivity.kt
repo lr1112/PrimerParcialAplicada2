@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
-import edu.ucne.primer_parcial.adaptador.AdaptadorPersonas
+import edu.ucne.primer_parcial.adaptador.AdaptadorPrestamo
 import edu.ucne.primer_parcial.data.Constantes
 import edu.ucne.primer_parcial.databinding.ActivityMainBinding
 import edu.ucne.primer_parcial.ui.FormularioActivity
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.personalList.observe(this, Observer {
-            binding.miRecyclerView.adapter = AdaptadorPersonas(it)
+            binding.miRecyclerView.adapter = AdaptadorPrestamo(it)
         })
 
         binding.btnAbrirFormulario.setOnClickListener {

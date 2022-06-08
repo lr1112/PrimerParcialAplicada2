@@ -9,8 +9,8 @@ import edu.ucne.primer_parcial.databinding.ItemListBinding
 import edu.ucne.primer_parcial.models.Prestamos
 
 
-class AdaptadorPersonas(private val dataSet: List<Prestamos>?) :
-    RecyclerView.Adapter<AdaptadorPersonas.ViewHolder>() {
+class AdaptadorPrestamo(private val dataSet: List<Prestamos>?) :
+    RecyclerView.Adapter<AdaptadorPrestamo.ViewHolder>() {
 
 
 
