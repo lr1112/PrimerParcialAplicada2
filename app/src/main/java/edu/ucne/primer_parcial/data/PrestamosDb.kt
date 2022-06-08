@@ -10,7 +10,7 @@ import edu.ucne.primer_parcial.models.Prestamos
     entities = [Prestamos::class],
     version = 1
 )
-abstract class PersonalDb: RoomDatabase() {
+abstract class PrestamosDb: RoomDatabase() {
     abstract fun personalDao(): PrestamoDao
 
 }

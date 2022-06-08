@@ -2,19 +2,19 @@ package edu.ucne.primer_parcial
 
 import android.app.Application
 import androidx.room.Room
-import edu.ucne.primer_parcial.data.PersonalDb
+import edu.ucne.primer_parcial.data.PrestamosDb
 
 
 class PersonalApp: Application() {
     companion object{
-        lateinit var db:PersonalDb
+        lateinit var db:PrestamosDb
     }
 
     override fun onCreate() {
         super.onCreate()
         db = Room.databaseBuilder(
             this,
-            PersonalDb::class.java,
+            PrestamosDb::class.java,
             "personal"
         ).build()
 
