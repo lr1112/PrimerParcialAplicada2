@@ -4,7 +4,7 @@
     package="edu.ucne.primer_parcial">
 
     <application
-        android:name=".PersonalApp"
+        android:name=".PrestamosApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

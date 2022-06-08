@@ -5,7 +5,7 @@ import androidx.room.Room
 import edu.ucne.primer_parcial.data.PrestamosDb
 
 
-class PersonalApp: Application() {
+class PrestamosApp: Application() {
     companion object{
         lateinit var db:PrestamosDb
     }
