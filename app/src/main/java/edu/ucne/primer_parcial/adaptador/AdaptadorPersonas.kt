@@ -46,7 +46,7 @@ class AdaptadorPersonas(private val dataSet: List<Prestamos>?) :
             binding.tvNombre.text = "${personal.Nombre}, ${personal.Apellido}"
             binding.tvTelefono.text = personal.Telefono
             binding.tvCorreo.text = personal.Correo
-            binding.tvOcupacion.text = personal.ocupacion
+            binding.tvOcupacion.text = personal.prestado
 
             //todo evento on click
         }
