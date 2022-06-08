@@ -18,27 +18,27 @@ import edu.ucne.primer_parcial.viewModels.PersonalViewModel
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding:ActivityMainBinding
-    lateinit var personalViewModel: PersonalViewModel
+    lateinit var viewModel: PersonalViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
-       personalViewModel =  ViewModelProvider(this).get()
-       personalViewModel.iniciar()
+       viewModel =  ViewModelProvider(this).get()
+       viewModel.iniciar()
 
         binding.miRecyclerView.apply {
             layoutManager = LinearLayoutManager(applicationContext)
         }
 
-        personalViewModel.personalList.observe(this, Observer {
+        viewModel.personalList.observe(this, Observer {
             binding.miRecyclerView.adapter = AdaptadorPersonas(it)
         })
 
         binding.btnAbrirFormulario.setOnClickListener {
             val intent = Intent(this, FormularioActivity::class.java)
-            intent.putExtra(Constantes.OPERANCION_KEY, Constantes.OPERACION_INSERTAR)
+            intent.putExtra(Constantes.OPERANCION_KEY,Constantes.OPERACION_INSERTAR)
             startActivity(intent)
         }
     }

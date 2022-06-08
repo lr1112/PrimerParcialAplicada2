@@ -1,20 +1,20 @@
 package edu.ucne.primer_parcial.dao
 
 import androidx.room.*
-import edu.ucne.primer_parcial.models.Personal
+import edu.ucne.primer_parcial.models.Prestamos
 
 
 @Dao
 interface PersonalDao {
-    @Query("SELECT * FROM Personal")
-    suspend fun getAll(): List<Personal>
+    @Query("SELECT * FROM Prestamos")
+    suspend fun getAll(): List<Prestamos>
     @Insert
-    suspend fun insert(personas:List<Personal>)//:List<Int>
+    suspend fun insert(personas:List<Prestamos>)//:List<Int>
     @Update
-    suspend fun update(personal: Personal):Int
+    suspend fun update(personal: Prestamos):Int
 
     @Delete
-    suspend fun delete(personal: Personal):Int
+    suspend fun delete(personal: Prestamos):Int
 
 
 }

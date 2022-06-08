@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_add">
+        android:src="@drawable/ic_add"/>
 
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 
 </LinearLayout>

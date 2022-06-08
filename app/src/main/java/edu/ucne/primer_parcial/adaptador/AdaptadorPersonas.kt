@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import edu.ucne.primer_parcial.R
 import edu.ucne.primer_parcial.databinding.ItemListBinding
-import edu.ucne.primer_parcial.models.Personal
+import edu.ucne.primer_parcial.models.Prestamos
 
 
-class AdaptadorPersonas(private val dataSet: List<Personal>?) :
+class AdaptadorPersonas(private val dataSet: List<Prestamos>?) :
     RecyclerView.Adapter<AdaptadorPersonas.ViewHolder>() {
 
 
@@ -42,7 +42,7 @@ class AdaptadorPersonas(private val dataSet: List<Personal>?) :
         var binding = ItemListBinding.bind(view)
         var contexto = view.context
 
-        fun enlazarItem(personal: Personal) {
+        fun enlazarItem(personal: Prestamos) {
             binding.tvNombre.text = "${personal.Nombre}, ${personal.Apellido}"
             binding.tvTelefono.text = personal.Telefono
             binding.tvCorreo.text = personal.Correo
