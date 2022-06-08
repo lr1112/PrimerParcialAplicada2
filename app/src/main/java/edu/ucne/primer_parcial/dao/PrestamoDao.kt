@@ -5,7 +5,7 @@ import edu.ucne.primer_parcial.models.Prestamos
 
 
 @Dao
-interface PersonalDao {
+interface PrestamoDao {
     @Query("SELECT * FROM Prestamos")
     suspend fun getAll(): List<Prestamos>
     @Insert

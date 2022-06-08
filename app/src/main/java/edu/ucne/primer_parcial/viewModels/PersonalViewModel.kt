@@ -1,18 +1,13 @@
 package edu.ucne.primer_parcial.viewModels
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.ucne.primer_parcial.PersonalApp.Companion.db
-import edu.ucne.primer_parcial.dao.PersonalDao
 import edu.ucne.primer_parcial.models.Prestamos
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
-
 
 
 class PersonalViewModel: ViewModel(){
