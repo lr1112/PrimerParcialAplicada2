@@ -11,7 +11,7 @@ class FormularioViewModel: ViewModel() {
     var apellido = MutableLiveData<String>()
     var telefono = MutableLiveData<String>()
     var correo = MutableLiveData<String>()
-    var ocupacion = MutableLiveData<String>()
+    var prestado = MutableLiveData<String>()
     var operacion = Constantes.OPERACION_INSERTAR
     var operacionExitosa = MutableLiveData<Boolean>()
 

@@ -12,5 +12,5 @@ data class Prestamos(
     val Apellido:String,
     val Telefono:String,
     val Correo:String,
-    val ocupacion:String
+    val prestado:String
 )
