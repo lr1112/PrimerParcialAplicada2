@@ -35,10 +35,9 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.btnAbrirFormulario.setOnClickListener {
-            val intent = Intent(this, FormularioActivity::class.java)
-            intent.putExtra(Constantes.OPERANCION_KEY,Constantes.OPERACION_INSERTAR)
+            val intent = Intent(this,FormularioActivity::class.java)
             startActivity(intent)
+        }
         }
     }
 
-}
