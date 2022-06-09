@@ -18,10 +18,10 @@ class PrestamosViewModel: ViewModel(){
         fun iniciar(){
                 viewModelScope.launch {
                         personalList.value = withContext(Dispatchers.IO){
-                               db.personalDao().insert(arrayListOf<Prestamo>(
+                               /*db.personalDao().insert(arrayListOf<Prestamo>(
                                 Prestamo(0,"Luis", "Rosario","849-353-6691", "luisramonros123@gamil.com","500,000"),
                                 Prestamo(0,"Enel", "Ramon","809-456-8877", "enelR@gamil.com","600,000")
-                                ))
+                                ))*/
                                 db.personalDao().getAll()
                         }
 
