@@ -17,7 +17,6 @@ import edu.ucne.primer_parcial.viewModels.FormularioViewModel
 class FormularioActivity : AppCompatActivity() {
     lateinit var binding:ActivityFormularioBinding
     lateinit var viewModel: FormularioViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormularioBinding.inflate(layoutInflater)
@@ -27,23 +26,23 @@ class FormularioActivity : AppCompatActivity() {
         viewModel.operacion = intent.getStringExtra(Constantes.OPERANCION_KEY)!!
         binding.modelo = viewModel
         binding.lifecycleOwner = this
-        viewModel.operacionExitosa.observe(this, Observer {
+       /* viewModel.operacionExitosa.observe(this, Observer {
             if(it){
                 mostrarMensaje("Operacion Exitosa")
                 irAlInicio()
             }else{
                 mostrarMensaje("Ocurrio un Error")
             }
-        })
+        })*/
     }
 
-    private fun irAlInicio() {
+   /* private fun irAlInicio() {
         val intent = Intent(applicationContext,MainActivity::class.java)
     }
 
     private fun mostrarMensaje(s: String) {
-            Toast.makeText(applicationContext,s,Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext,s,Toast.LENGTH_LONG).show()
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-    }
+    }*/
 }

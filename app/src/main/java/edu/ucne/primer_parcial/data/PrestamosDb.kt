@@ -8,7 +8,7 @@ import edu.ucne.primer_parcial.models.Prestamo
 
 @Database(
     entities = [Prestamo::class],
-    version = 1
+    version = 2
 )
 abstract class PrestamosDb: RoomDatabase() {
     abstract fun personalDao(): PrestamoDao

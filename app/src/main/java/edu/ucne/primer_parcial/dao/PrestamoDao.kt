@@ -9,7 +9,7 @@ interface PrestamoDao {
     @Query("SELECT * FROM Prestamo")
     suspend fun getAll(): List<Prestamo>
     @Insert
-    suspend fun insert(personas:List<Prestamo>)//:List<Int>
+    suspend fun insert(personas:List<Prestamo>):List<Long>
     @Update
     suspend fun update(personal: Prestamo):Int
 

@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FormularioViewModel: ViewModel() {
-    var id = MutableLiveData<Int>()
+    var personaId = MutableLiveData<Long>()
     var nombre = MutableLiveData<String>()
     var apellido = MutableLiveData<String>()
     var telefono = MutableLiveData<String>()
@@ -21,32 +21,31 @@ class FormularioViewModel: ViewModel() {
     var operacion = Constantes.OPERACION_INSERTAR
     var operacionExitosa = MutableLiveData<Boolean>()
 
-    init {
-        id.value = 0
-    }
 
-    fun guardarUsuario(){
-        var mPrestamo = Prestamo(0,nombre.value!!,apellido.value!!,telefono.value!!,
-        correo.value!!,prestado.value!!)
-        when(operacion){
-            Constantes.OPERACION_INSERTAR->{
+    fun guardarUsuario() {
+        var mPrestamo = Prestamo(
+            0, nombre.value!!, apellido.value!!, telefono.value!!,
+            correo.value!!, prestado.value!!
+        )
+        when (operacion) {
+            Constantes.OPERACION_INSERTAR -> {
                 viewModelScope.launch {
-                    val result = withContext(Dispatchers.IO){
+                    val result = withContext(Dispatchers.IO) {
                         db.personalDao().insert(
                             arrayListOf<Prestamo>(
                                 mPrestamo
                             )
                         )
                     }
-                    operacionExitosa.value = result.equals(true)
+                    // operacionExitosa.value = result.equals(true)
                 }
 
 
             }
-            Constantes.OPERACION_EDITAR->{
+            // Constantes.OPERACION_EDITAR->{
 
-            }
+            // }
         }
-
     }
 }
+

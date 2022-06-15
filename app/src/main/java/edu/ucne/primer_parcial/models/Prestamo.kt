@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Prestamo(
     @PrimaryKey(autoGenerate = true)
-    val personaId:Int,
+    val personaId:Long,
     val Nombre:String,
     val Apellido:String,
     val Telefono:String,

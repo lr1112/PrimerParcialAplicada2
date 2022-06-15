@@ -14,7 +14,6 @@ import edu.ucne.primer_parcial.ui.FormularioActivity
 import edu.ucne.primer_parcial.viewModels.PrestamosViewModel
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var binding:ActivityMainBinding
     lateinit var viewModel: PrestamosViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
